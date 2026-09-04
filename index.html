@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Arinda!</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      background: linear-gradient(135deg, #0f172a, #1e1b4b, #311042);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    .bg-emoji {
+      position: absolute;
+      font-size: 3.2rem;
+      opacity: 0.35;
+      user-select: none;
+      pointer-events: none;
+      animation: floatSmooth 6s ease-in-out infinite alternate;
+      z-index: 1;
+    }
+
+    .bg-emoji.e1 { top: 10%; left: 8%; animation-delay: 0s; }
+    .bg-emoji.e2 { top: 18%; right: 10%; animation-delay: 1.5s; font-size: 3.8rem; opacity: 0.30; }
+    .bg-emoji.e3 { bottom: 12%; left: 6%; animation-delay: 3s; font-size: 3.5rem; }
+    .bg-emoji.e4 { bottom: 15%; right: 8%; animation-delay: 2s; }
+    .bg-emoji.e5 { top: 48%; left: 4%; animation-delay: 4s; font-size: 2.8rem; opacity: 0.28; }
+    .bg-emoji.e6 { top: 45%; right: 5%; animation-delay: 2.5s; font-size: 3rem; opacity: 0.28; }
+
+    @keyframes floatSmooth {
+      0% { transform: translateY(0px) rotate(0deg); }
+      100% { transform: translateY(-18px) rotate(10deg); }
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(236,72,153,0.25) 0%, rgba(0,0,0,0) 70%);
+      top: 10%;
+      left: 15%;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    
+    body::after {
+      content: '';
+      position: absolute;
+      width: 370px;
+      height: 370px;
+      background: radial-gradient(circle, rgba(99,102,241,0.25) 0%, rgba(0,0,0,0) 70%);
+      bottom: 10%;
+      right: 15%;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 35px 30px;
+      border-radius: 24px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      text-align: center;
+      max-width: 450px;
+      width: 100%;
+      position: relative;
+      z-index: 10;
+    }
+
+    .page {
+      display: none;
+      animation: fadeIn 0.6s ease-in-out forwards;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    h1 {
+      color: #f472b6;
+      font-size: 1.6em;
+      letter-spacing: 0.5px;
+      margin-top: 0;
+      text-shadow: 0 0 10px rgba(244, 114, 182, 0.3);
+    }
+
+    p {
+      color: #e2e8f0;
+      font-size: 1.05em;
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    .sender {
+      color: #f472b6;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .page-icon {
+      font-size: 2.2rem;
+      margin-bottom: 8px;
+      display: inline-block;
+      filter: drop-shadow(0 2px 8px rgba(244, 114, 182, 0.4));
+    }
+
+    .photo {
+      width: 100%;
+      max-height: 280px;
+      object-fit: cover;
+      border-radius: 16px;
+      margin-bottom: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-next {
+      background: linear-gradient(135deg, #ec4899, #8b5cf6);
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      font-size: 1em;
+      font-weight: 600;
+      border-radius: 25px;
+      cursor: pointer;
+      margin-top: 20px;
+      box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-next:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(236, 72, 153, 0.6);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Pemutar Lagu "Beranjak Dewasa" -->
+  <audio id="bg-music" loop preload="auto">
+    <source src="https://files.catbox.moe/5z5s5d.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="bg-emoji e1">✨</div>
+  <div class="bg-emoji e2">🎂</div>
+  <div class="bg-emoji e3">🕯️</div>
+  <div class="bg-emoji e4">🌙</div>
+  <div class="bg-emoji e5">🎀</div>
+  <div class="bg-emoji e6">💫</div>
+
+  <div class="card">
+
+    <!-- Halaman 1: Awalan -->
+    <div class="page active" id="page-1">
+      <div class="page-icon">✨</div>
+      <h1>Surprise Anak Sulung Zain!!!</h1>
+      <p>Waaahhh ada yang ulang tahun niiihhh... dikira siapa... ternyata sahabat tak sedarah yaaaa... 🤍</p>
+      <button class="btn-next" onclick="nextPage(2)">Lanjut ➡️</button>
+    </div>
+
+    <!-- Halaman 2: Pengantar -->
+    <div class="page" id="page-2">
+      <div class="page-icon">✉️</div>
+      <h1>Pesan Buat Kamu</h1>
+      <p>Ini ada ucapan dari your friends and younger sister untuk yang lagi Ulang Tahun 🎂🎂, dibaca yang tulus yaa... 💌</p>
+      <button class="btn-next" onclick="nextPage(3)">Mulai Baca ➡️</button>
+    </div>
+
+    <!-- Halaman 3: Foto & Ucapan 1 (Titah) -->
+    <div class="page" id="page-3">
+      <div class="page-icon">📸</div>
+      <img src="Titah.png" alt="Foto 1" class="photo">
+      <p class="sender">Titah - younger sister</p>
+      <p>Pesan : Hepy Bersdey mba arin, selamat atas bergantinya umur yang kesekian kalinya. Terima kasih atas waktu yang telah di berikan kepada saya untuk mengingat momen yang tidak datang 2 kali dalam setahun. Selamat atas semua keberhasilan yang telah engkau perjuangkan. Selamat-selamat…🥳🎂 intinya makasih udah selalu berusaha yang terbaik untuk orang lain. Dan juga jangan lupa yang terbaik untuk diri sendiri juga. Doa terbaik untuk mba ku, semoga tambah tua tambah tau diri, bersungguh-sungguh dalam mencari ilmunya di pondok dan di sekolah. Sekian sama-sama 🌷</p>
+      <button class="btn-next" onclick="nextPage(4)">Selanjutnya ➡️</button>
+    </div>
+
+    <!-- Halaman 4: Foto & Ucapan 2 (Syaira) -->
+    <div class="page" id="page-4">
+      <div class="page-icon">🥂</div>
+      <img src="Syaira.jpeg" alt="Foto 2" class="photo">
+      <p class="sender">Syaira - sahabat terbaik</p>
+      <p>Pesan : happyy miladd mbaa arinnn(kata anak tarbiyah tahun 2023 keknya), ga banyak pesan yang aku sampaikan tapi cerita dulu dehhh.. ga kebayang bakal jadi coding giniii keren bangett awal nya aku nyaranin nya tag vidio ehh awal itu aku diajak terus nyaranin dehh hehe okee itu aja dehh, langsung ke pesan biar ga panjang panjang " semoga hal-hal baik selalu hadir dengan kebarokahan ya,umurnya selalu berkah,ilmunya yang di pelajari menjadi ilmu yang barokah amminnn,terakhirr semogaa kita bisa ketemu lagii bersama temen temen yang lainn amminnn...." SEMANGAT SELALUU YAAAA BESTT 🕯️</p>
+      <button class="btn-next" onclick="nextPage(5)">Selanjutnya ➡️</button>
+    </div>
+
+    <!-- Halaman 5: Foto & Ucapan 3 (Ardhiq) -->
+    <div class="page" id="page-5">
+      <div class="page-icon">👑</div>
+      <img src="Ardhiq.png" alt="Foto 3" class="photo">
+      <p class="sender">Ardhiq - saudara tak sedarah</p>
+      <p>Pesan : Happy Birthdayyyy mbak arin!!!!! lama sudah nggak ngabarin yaaa mbakkk maaf kalo sebelumnya kalo aku ada salah selamattt yaaaaa mbaaak arinnnnn,hahhahhahah udah makin tuaa nihhh,cndaaaaaa,panjang umur yaa mbak rinn,sehat selaluuu,yang rajinnnn yaa mbakkkk belajarnyaaaaa bentar lagiiii kannn lulussss... dimanapun mbakkk kuliahhh nantiiiii semogaa selaluuu di iringi doa restu kanjeng romo sama ortunyaa mbakk ndak usah banyak banyak yaaa mbakkkk nanti malasss sampean bacanyaaaaaaaaaa. 🎀</p>
+      <button class="btn-next" onclick="nextPage(6)">Selanjutnya ➡️</button>
+    </div>
+
+    <!-- Halaman 6: Foto & Ucapan 4 (Faaza) -->
+    <div class="page" id="page-6">
+      <div class="page-icon">🎁</div>
+      <img src="Faaza.png" alt="Foto 4" class="photo">
+      <p class="sender">Faaza - saudara tak sedarah</p>
+      <p>Pesan : SELAMAT ULANG TAHUN MBAKKKKK!!! ga kerasa udh 18 tahun aja, perasaan baru kemaren kita semua kelas 1 smp di kedunglo 7 sekarang kita udh mau lulus, beda tempat aja... tapi mbak belum buat KTP jadi belum kece wkwkwkwkwkwkwkwkwk... ok langsung doa aja yaa, mbak jawab "aamiin" sambil baca doa yaa.... ok langsung ke doanya "Bismillahirrohmanirrohim... semoga makin pinter, makin cerdas, makin tinggi, makin kurang nakalnya di pondok, semoga di beri umur yang panjang dan barokah, makin enak hatinya... Aamiinn" dah itu doanya, penutupnya mbak... sekali lagi SELAMAT ULANG TAHUN MBAKK YAAA!!! jangan lupa sama kami yaa 😊😊
+         💫</p>
+      <button class="btn-next" onclick="nextPage(7)">Selanjutnya ➡️</button>
+    </div>
+
+    <!-- Halaman 7: Foto & Ucapan 5 (Syafa) -->
+    <div class="page" id="page-7">
+      <div class="page-icon">🕊️</div>
+      <img src="Syafa.png" alt="Foto 5" class="photo">
+      <p class="sender">Syafa - sahabat terbaik</p>
+      <p>Pesan : I just wanna give u a word. Bukan hadiah yang dikasih secara langsung. Tapi dari jalur langit yang nantinya dikabulkan oleh-Nya. HAPPY YAUMIL MILAD MBAK ARINDA FUTIHAT RAMADIKA... temen seperjuangan masa SMP, teman se-asrama, se-lorong, se-wc, se-jemuran. I wish you all the best. Makasih karna udah membiarkan gweh jadi salah satu dari lembar kisahmu. Bentar lagi kita lulus Rin! doa yang terbaik buat kamu disana... mudahan selalu lancar, sehat selalu, apapun yang terjadi semoga menjadi pelajaran and kebaikan buat kamu... Love you so much much pokonya ❤️❤️ semangat trs mba arindaa... 😊😊</p>
+      <button class="btn-next" onclick="nextPage(8)">Selanjutnya ➡️</button>
+    </div>
+
+    <!-- Halaman 8: Foto & Ucapan 6 (Daffa) -->
+    <div class="page" id="page-8">
+      <div class="page-icon">🌟</div>
+      <img src="Daffa.png" alt="Foto Daffa" class="photo">
+      <p class="sender">Daffa - sahabat terbaik</p>
+      <p>Pesan : Oke haloo mbakkk arinn... selamat ulang tahun yooo, sehat selalu, panjang umur barokah, pokoknya doa-doa yang baik yoo meningkat semua hal baik-baik Aamiin 💫</p>
+      <button class="btn-next" onclick="nextPage(9)">Selanjutnya ➡️</button>
+    </div>
+
+    <!-- Halaman 9: Foto & Ucapan 7 (Kebersamaan) -->
+    <div class="page" id="page-9">
+      <div class="page-icon">🌸</div>
+      <img src="Kolase ber-6.jpg" alt="Foto Kebersamaan" class="photo">
+      <p class="sender">Kebersamaan... 👨‍👩‍👧‍👦✨</p>
+      <p> Makasih atas kebersamaannya... udah sama-sama se-pondok, se-tangga, se-dapur, se-kelas, se-kena masalah bareng, se-gila bareng, se-semua mua mua lah pokoknya... 3 tahun kita bareng, sebetulnya kita masih satu lembaga, cuma beda tempat aja, kami di kalimantan kamu di jawa. Selama kita ketemu... cukup buat menuhin lembar kenangan kita...  💖</p>
+      <button class="btn-next" onclick="nextPage(10)">Ke Penutup ➡️</button>
+    </div>
+
+    <!-- Halaman 10: Penutup -->
+    <div class="page" id="page-10">
+      <div class="page-icon">🥳</div>
+      <h1>HAPPY 18th BIRTHDAY! 🥳🎈</h1>
+      <p>Nahhh itu dia ucapan dari teman-teman untuk yang ulang tahun, gimana? bagus gaa? bagus lah masa nggak?wkwkwkwkwkwk...</p>
+      <p>Pesan terakhir dari kami jangan lupa sama kami yang ada di kalimantan yaa, kami semua sayang sama ARINDA.. sekali lagi SELAMAT ULANG TAHUN 🥳🎈</p>
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script>
+    let musicPlayed = false;
+
+    function nextPage(pageNum) {
+      // Jalankan lagu saat tombol diklik pertama kali
+      if (!musicPlayed) {
+        const audio = document.getElementById('bg-music');
+        if (audio) {
+          audio.play().catch(err => console.log("Autoplay blocked:", err));
+        }
+        musicPlayed = true;
+      }
+
+      const pages = document.querySelectorAll('.page');
+      pages.forEach(page => page.classList.remove('active'));
+
+      const targetPage = document.getElementById('page-' + pageNum);
+      if (targetPage) {
+        targetPage.classList.add('active');
+      }
+
+      // Efek kembang api di halaman penutup (Halaman 10)
+      if (pageNum === 10) {
+        confetti({
+          particleCount: 120,
+          spread: 80,
+          origin: { y: 0.6 }
+        });
+      }
+    }
+  </script>
+
+</body>
+</html>
